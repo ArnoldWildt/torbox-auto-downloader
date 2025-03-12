@@ -1,0 +1,24 @@
+version: "3.9"
+services:
+  torbox:
+    image: torbox_auto_downloader:local
+    # You must change the volume paths below to point to your desired directories.
+    volumes:
+      - /path/to/watch:/app/watch
+      - /path/to/downloads:/app/downloads
+    environment:
+      # Replace 'YOUR_TORBOX_API_KEY' with your actual Torbox API key.
+      - TORBOX_API_KEY=YOUR_TORBOX_API_KEY
+      - TORBOX_API_BASE=https://api.torbox.app
+      - TORBOX_API_VERSION=v1
+      - WATCH_DIR=/app/watch
+      - DOWNLOAD_DIR=/app/downloads
+      - WATCH_INTERVAL=60
+      - CHECK_INTERVAL=300
+      - MAX_RETRIES=2
+      - ALLOW_ZIP=true
+      - SEED_PREFERENCE=1
+      - POST_PROCESSING=-1
+      - QUEUE_IMMEDIATELY=false
+      - PROGRESS_INTERVAL=15
+    restart: unless-stopped
