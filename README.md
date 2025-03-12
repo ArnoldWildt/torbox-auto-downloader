@@ -14,7 +14,12 @@ This project automatically downloads torrents and NZBs from a watch directory us
 2.  Update the volume paths in your `docker-compose.yml` file. Replace the placeholders `/path/to/watch` and `/path/to/downloads` with your desired absolute paths.
 
 ### Running
+1.  Clone Repo
 
+    ```bash
+    git clone https://github.com/ArnoldWildt/torbox-auto-downloader
+    ```
+    
 1.  Build the Docker image:
 
     ```bash
@@ -67,7 +72,7 @@ This project automatically downloads torrents and NZBs from a watch directory us
     python main.py
     ```
 
-    Make sure you have created the `watch`, `downloads`, and `processed` directories in your project root.
+    Make sure you have created the `watch`, and `downloads` directories in your project root.
 
 ## Integration with Sonarr/Radarr
 
@@ -80,3 +85,4 @@ This project can be integrated with Sonarr and Radarr using the "Blackhole" down
 3.  Select **Torrent Blackhole** or **Usenet Blackhole** (or both, repeating these steps for each).
 4.  Give the download client a descriptive name (e.g., "TorBox Torrent Blackhole").
 5.  Set the **Torrent/Usenet Folder** to the `watch` directory you configured for this application (e.g., `/app/watch` if using Docker, or the `watch` subdirectory if running locally). This path must match the `WATCH_DIR` environment variable.
+6.  Set the **Watch Folder** to the `downloads` directory you configured for this application (e.g., `/app/downloads` if using Docker, or the `downloads` subdirectory if running locally). This path must match the `DOWNLOAD_DIR` environment variable.
