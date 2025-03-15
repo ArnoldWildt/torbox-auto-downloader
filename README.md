@@ -29,13 +29,13 @@ This project automatically downloads torrents and NZBs from a watch directory us
 2.  Start the container using Docker Compose:
 
     ```bash
-    docker-compose up
+    docker compose up
     ```
 
     To run in detached mode (in the background):
 
     ```bash
-    docker-compose up -d
+    docker compose up -d
     ```
 
 ## Configuration (Environment Variables)
